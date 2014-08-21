@@ -1,0 +1,38 @@
+snippet main "int main(int argc, char** argv) {...}" b
+int main(int argc, char** argv) {
+	${VISUAL}${0}
+	return 0;
+}
+endsnippet
+
+snippet puts "puts(...);" b
+puts(${1});
+endsnippet
+
+snippet fin "FILE* fin = fopen(..., 'r');" b
+FILE* ${1:fin} = fopen(${2}, "${3:r}");
+endsnippet
+
+snippet fout "FILE* fout = fopen(..., 'w');" b
+FILE* ${1:fout} = fopen(${2}, "${3:w}");
+endsnippet
+
+snippet fcl "fclose(...);" b
+fclose(${1:fin});
+endsnippet
+
+snippet deff "#ifndef XX | #define XX | #endif // XX" b
+#ifndef ${1:${VISUAL}}
+#define $1
+#endif  // $1${0}
+endsnippet
+
+snippet ns "namespace"
+namespace ${1:`!p snip.rv = snip.basename`} {
+${VISUAL}${0}
+}  // namespace $1
+endsnippet
+
+snippet co "std::cout << ... << std::endl;"
+std::cout << ${0} << std::endl;
+endsnippet

@@ -1,0 +1,133 @@
+snippet i "int"
+int 
+endsnippet
+
+snippet l "long"
+long 
+endsnippet
+
+snippet u "unsigned"
+unsigned 
+endsnippet
+
+snippet d "double"
+double 
+endsnippet
+
+snippet c "char"
+char 
+endsnippet
+
+snippet co "const"
+const 
+endsnippet
+
+snippet st "static"
+static 
+endsnippet
+
+snippet v "void"
+void 
+endsnippet
+
+snippet cl "cl"
+class 
+endsnippet
+
+snippet pub "public"
+public 
+endsnippet
+
+snippet pri "private"
+private 
+endsnippet
+
+snippet pro "protected"
+protected 
+endsnippet
+
+snippet ret "return"
+return ${0:0};
+endsnippet
+
+snippet br "break"
+break;
+endsnippet
+
+snippet ? "? ... : ..."
+? ${1:x} : ${2:y}
+endsnippet
+
+snippet wh "while (...) {...}"
+while (${1}) {
+	${VISUAL}${0}
+}
+endsnippet
+
+snippet do "do {...} while (...);"
+do {
+	${VISUAL}${0}
+} while (${1});
+endsnippet
+
+snippet for "for (...; ...; ...) {...}"
+for (${1}; ${2}; ${3}) {
+	${VISUAL}${0}
+}
+endsnippet
+
+snippet forr "for (auto iter : ...) {...}"
+for (${1:auto} ${2:iter} : ${3}) {
+	${VISUAL}${0}
+}
+endsnippet
+
+snippet forb "for (auto iter = XX.begin(); iter < XX.end(); ++iter) {...}"
+for (${1:auto} ${2:iter} = ${3}.begin(); $2 < $3.end(); ++$2) {
+	${VISUAL}${0}
+}
+endsnippet
+
+snippet for+ "for (int i = 0; i < n; ++i) {...}"
+for (${1:int} ${2:i} = ${3:0}; $2 < ${4:n}; ++$2) {
+	${VISUAL}${0}
+}
+endsnippet
+
+snippet for- "for (int i = n-1; i >= 0; --i) {...}"
+for (${1:int} ${2:i} = ${3:n-1}; $2 >= ${4:0}; --$2) {
+	${VISUAL}${0}
+}
+endsnippet
+
+snippet if "if (...) {...}" b
+if (${1}) {
+	${VISUAL}${0}
+}
+endsnippet
+
+snippet el "else {...}" b
+else {
+	${VISUAL}${0}
+}
+endsnippet
+
+snippet eli "else if (...) {...}" b
+else if (${1}) {
+	${VISUAL}${0}
+}
+endsnippet
+
+snippet ife "if (...) {...} else {...}" b
+if (${1}) {
+	${2}
+} else {
+	${0}
+}
+endsnippet
+
+snippet fun "void f(...) {...}" b
+${1:void} ${2:function_name}(${3}) {
+	${VISUAL}${0}
+}
+endsnippet

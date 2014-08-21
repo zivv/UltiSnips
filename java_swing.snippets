@@ -1,0 +1,79 @@
+snippet exoncl "frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);"
+${1:frame}.setDefaultCloseOperation(${2:JFrame.EXIT_ON_CLOSE});
+endsnippet
+
+snippet show "frame.setVisible(true);"
+${1:frame}.setVisible(true);
+endsnippet
+
+snippet pgrid "JPanel p = new JPanel(new GridLayout(..., ...));"
+JPanel ${1:p} = new JPanel(new GridLayout(${2}, ${3}));
+endsnippet
+
+snippet add "frame.getContentPane().add(...);"
+${1:frame}.getContentPane().add(${0});
+endsnippet
+
+snippet addn "frame.getContentPane().add(..., BorderLayout.NORTH);"
+${1:frame}.getContentPane().add(${0}, BorderLayout.NORTH);
+endsnippet
+
+snippet adds "frame.getContentPane().add(..., BorderLayout.SOUTH);"
+${1:frame}.getContentPane().add(${0}, BorderLayout.SOUTH);
+endsnippet
+
+snippet adde "frame.getContentPane().add(..., BorderLayout.EAST);"
+${1:frame}.getContentPane().add(${0}, BorderLayout.EAST);
+endsnippet
+
+snippet addw "frame.getContentPane().add(..., BorderLayout.WEST);"
+${1:frame}.getContentPane().add(${0}, BorderLayout.WEST);
+endsnippet
+
+snippet addc "frame.getContentPane().add(..., BorderLayout.CENTER);"
+${1:frame}.getContentPane().add(${0}, BorderLayout.CENTER);
+endsnippet
+
+snippet addactl "button.addActionListener(new ActionListener() {...});"
+${1:button}.addActionListener(new ActionListener() {
+	public void actionPerformed(ActionEvent e) {
+		${VISUAL}${0}
+	}
+});
+endsnippet
+
+snippet addactlt "button.addActionListener(this);"
+${1:button}.addActionListener(this);
+endsnippet
+
+snippet addmousel "frame.addMouseListener(new MouseAdapter() {...});"
+${1:frame}.addMouseListener(new MouseAdapter() {
+	${VISUAL}${0}
+});
+endsnippet
+
+snippet addmouselt "frame.addMouseListener(this);"
+${1:frame}.addMouseListener(this);
+endsnippet
+
+snippet addkeyl "frame.addKeyListener(new KeyAdapter() {...});"
+${1:frame}.addKeyListener(new KeyAdapter() {
+	${VISUAL}${0}
+});
+endsnippet
+
+snippet addkeylt "frame.addKeyListener(this);"
+${1:frame}.addKeyListener(this);
+endsnippet
+
+snippet edit "text.setEditable(...);"
+${1:text}.setEditable(${2:false});
+endsnippet
+
+snippet scroll "new JScrollPane(...)"
+new JScrollPane(${1:text})
+endsnippet
+
+snippet setmenu "frame.setJMenuBar(...);"
+${1:frame}.setJMenuBar(${2:menu});
+endsnippet

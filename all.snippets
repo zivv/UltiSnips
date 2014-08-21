@@ -1,0 +1,27 @@
+snippet email "zivvv0@gmail.com (ziv)" i
+zivvv0@gmail.com (ziv)
+endsnippet
+
+snippet todo "todo comment"
+TODO(ziv): ${VISUAL}
+endsnippet
+
+snippet ![\(\['"<]! "symbol pair" ir
+`!p snip.rv = match.group(0)`${VISUAL}${0}`!p snip.rv = {
+		  '[':']',
+			'(':')',
+			"'":"'",
+			'"':'"',
+			'<':'>',
+		}.get(match.group(0))`
+endsnippet
+
+snippet {} "symbol pair" i
+{${VISUAL}${0}}
+endsnippet
+
+snippet { "expand {}" i
+{
+	${VISUAL}${0}
+}
+endsnippet

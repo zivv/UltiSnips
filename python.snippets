@@ -1,0 +1,94 @@
+snippet i "import"
+import 
+endsnippet
+
+snippet fro "from ... import ..."
+from ${1} import ${2:*}
+endsnippet
+
+snippet if "if ...:"
+if ${1}:
+endsnippet
+
+snippet ei "elif ...:"
+elif ${1}:
+endsnippet
+
+snippet el "else:"
+else:
+endsnippet
+
+snippet wh "while ...:"
+while ${1}:
+endsnippet
+
+snippet for "for ... in ...:"
+for ${1} in ${2}:
+endsnippet
+
+snippet def "def ...(...):"
+def ${1}(${2:`!v indent('.') ? 'self' : ''`}):
+endsnippet
+
+snippet cl "class ...(...):"
+class ${1:`!v Filename()`}(${2}):
+endsnippet
+
+snippet try "try: ... | except Exception as e:"
+try:
+	${1}
+except${2: Exception as e}:
+endsnippet
+
+snippet or "open(...)"
+open(${1})
+endsnippet
+
+snippet ow "open(..., 'w')"
+open(${1}, 'w')
+endsnippet
+
+snippet wi "with ... as ...:"
+with ${1} as ${2}:
+endsnippet
+
+snippet wr "with open(...) as ifile:"
+with open(${1}) as ${2:ifile}:
+endsnippet
+
+snippet ww "with open(..., 'w') as ofile:"
+with open(${1}, 'w') as ${2:ofile}:
+endsnippet
+
+snippet br "break"
+break
+endsnippet
+
+snippet pr "print"
+print 
+endsnippet
+
+snippet fwalk "for root, dir, files in os.walk(...): | for f in files:"
+for root, dirs, files in os.walk(${1:path}):
+	for ${2:f} in files:
+endsnippet
+
+snippet ev "eval(...)"
+eval(${VISUAL}${0})
+endsnippet
+
+snippet ret "return"
+return 
+endsnippet
+
+snippet en "enumerate(...)"
+enumerate(${VISUAL}${0})
+endsnippet
+
+snippet gl "global"
+global 
+endsnippet
+
+snippet re "repr(...)"
+repr(${VISUAL}${0})
+endsnippet
