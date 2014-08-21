@@ -1,3 +1,1 @@
-snippets for UltiSnip
-
-see github.com/SirVer/ultisnips
+snippets for [UltiSnip](github.com/SirVer/ultisnips)
