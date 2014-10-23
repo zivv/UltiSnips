@@ -74,7 +74,7 @@ for root, dirs, files in os.walk(${1:path}):
 endsnippet
 
 snippet ev "eval(...)"
-eval(${VISUAL}${0})
+eval(${VISUAL}${1})${0}
 endsnippet
 
 snippet ret "return"
@@ -82,7 +82,7 @@ return
 endsnippet
 
 snippet en "enumerate(...)"
-enumerate(${VISUAL}${0})
+enumerate(${VISUAL}${1})${0}
 endsnippet
 
 snippet gl "global"
