@@ -1,22 +1,27 @@
-snippet clean "clean part"
+snippet clean "clean part" b
 clean:
-	-rm -rf $(BUILD_PATH)
-	-rm $(filter-out $(DIST_SRC), $(shell find | sed 's#\./##g' | sed '/\.git/d'))
+	-rm $(filter-out $(DIST_SRC), \
+		$(shell find . -type f | sed 's#\./##g' | sed '/\.git/d'))
 endsnippet
 
-snippet tar "packge to tar.gz"
+snippet tar "packge to .tar.gz" b
 dist:
 	tar -zcf dist.tar.gz $(DIST_SRC)
-release: $(RELEASE_SRC)
-	tar -zcf release.tar.gz $(RELEASE_SRC)
+rlse: $(RLSE_SRC)
+	tar -zcf rlse.tar.gz $(RLSE_SRC)
 endsnippet
 
-snippet info "info part"
+snippet rlse "packge rlse to .tar.gz" b
+rlse: $(RLSE_SRC)
+	tar -zcf rlse.tar.gz $(RLSE_SRC)
+endsnippet
+
+snippet info "info part" b
 info:
 	@echo "CPP_SOURCES:\t$(CPP_SOURCES)"
 	@echo "CPP_OBJS:\t$(CPP_OBJS)"
 	@echo "CPP_FPIC_OBJS:\t$(CPP_FPIC_OBJS)\n"
-	@echo "RELEASE_SRC:\t$(RELEASE_SRC)\n"
+	@echo "RLSE_SRC:\t$(RELEASE_SRC)\n"
 endsnippet
 
 snippet build "build"
