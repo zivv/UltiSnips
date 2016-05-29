@@ -1,4 +1,4 @@
-snippet #! "#!/usr/bin/env python3" 
+snippet #! "#!/usr/bin/env python3"
 #!/usr/bin/env python3
 endsnippet
 
@@ -39,13 +39,13 @@ def ${1}(${2:`!v indent('.') ? 'self' : ''`}):
 endsnippet
 
 snippet cl "class ...(...):"
-class ${1:`!v Filename()`}(${2}):
+class ${1}(${2}):
 endsnippet
 
 snippet try "try: ... | except Exception as e:"
 try:
 	${1}
-except${2: Exception as e}:
+except ${2:Exception as e}:
 endsnippet
 
 snippet or "open(...)"
@@ -76,13 +76,12 @@ snippet pr "print()"
 print(${VISUAL}${1})
 endsnippet
 
-snippet fwalk "for root, dir, files in os.walk(...): | for f in files:"
-for root, dirs, files in os.walk(${1:path}):
-	for ${2:f} in files:
+snippet walk "for dirpath, dir, files in os.walk(...)"
+for dirpath, dirs, files in os.walk(${1}):
 endsnippet
 
 snippet ev "eval(...)"
-eval(${VISUAL}${1})${0}
+eval(${VISUAL}${1})
 endsnippet
 
 snippet ret "return"
@@ -90,7 +89,7 @@ return
 endsnippet
 
 snippet en "enumerate(...)"
-enumerate(${VISUAL}${1})${0}
+enumerate(${VISUAL}${1})
 endsnippet
 
 snippet gl "global"
@@ -120,4 +119,31 @@ logging.addLevelName(logging.ERROR,    'ERRO')
 logging.addLevelName(logging.CRITICAL, 'CRIT')
 logging.basicConfig(format='%(asctime)s %(levelname)s %(message)s',
                     level=logging.${1:DEBUG})
+endsnippet
+
+snippet ''f "'...'.format(...)" i
+'${VISUAL}${1}'.format(${2})
+endsnippet
+
+snippet ap "argparse.ArgumentParser(...)" b
+parser = argparse.ArgumentParser(
+	description='${1}',
+)
+args = parser.parse_args()
+endsnippet
+
+snippet paa "parser.add_argument(...)" b
+${1:parser}.add_argument(
+	'${2}',
+	type=${3:str},
+	help='${4}'${5},
+)
+endsnippet
+
+snippet main "def main(): ... if __name__ == '__main__': ..." b
+def main():
+	${VISUAL}${0}
+
+if __name__ == '__main__':
+	main()
 endsnippet
