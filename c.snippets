@@ -1,24 +1,24 @@
-snippet i "int"
+snippet i "int" i
 int 
 endsnippet
 
-snippet l "long"
+snippet lo "long" i
 long 
 endsnippet
 
-snippet u "unsigned"
+snippet u "unsigned" i
 unsigned 
 endsnippet
 
-snippet d "double"
+snippet d "double" i
 double 
 endsnippet
 
-snippet c "char"
+snippet ch "char" i
 char 
 endsnippet
 
-snippet co "const"
+snippet co "const" i
 const 
 endsnippet
 
@@ -26,7 +26,7 @@ snippet st "static"
 static 
 endsnippet
 
-snippet v "void"
+snippet v "void" i
 void 
 endsnippet
 
@@ -132,6 +132,10 @@ ${1:void} ${2:function_name}(${3}) {
 }
 endsnippet
 
-snippet incc "#include <...>" b
+snippet in "#include <...>" b
 #include <${0}>
+endsnippet
+
+snippet In "#include ''...''" b
+#include "${0}"
 endsnippet

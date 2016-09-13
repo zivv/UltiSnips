@@ -1,0 +1,69 @@
+snippet CK "CHECK(...)"
+CHECK(${1});
+endsnippet
+
+snippet CE "CHECK_EQ(...)"
+CHECK_EQ(${1}, ${2});
+endsnippet
+
+snippet LI "LOG(INFO) << "
+LOG(INFO) << ${VISUAL}${1};
+endsnippet
+
+snippet LW "LOG(WARNING) << "
+LOG(WARNING) << ${VISUAL}${1};
+endsnippet
+
+snippet LE "LOG(ERROR) << "
+LOG(ERROR) << ${VISUAL}${1};
+endsnippet
+
+snippet LF "LOG(FATAL) << "
+LOG(FATAL) << ${VISUAL}${1};
+endsnippet
+
+snippet LIE "LOG_IF(ERROR, ...) << "
+LOG_IF(ERROR, ${1}) << ${VISUAL};
+endsnippet
+
+snippet TF "TEST_F(..., ...) { ... }" b
+TEST_F(${1}, ${2}) {
+	${0}
+}
+endsnippet
+
+snippet AE "ASSERT_EQ" b
+ASSERT_EQ(${1}, ${2});
+endsnippet
+
+snippet AT "ASSERT_TRUE" b
+ASSERT_TRUE(${1});
+endsnippet
+
+snippet AGT "ASSERT_GT" b
+ASSERT_GT(${1}, ${2});
+endsnippet
+
+snippet ET "EXPECT_TRUE" b
+EXPECT_TRUE(${1});
+endsnippet
+
+snippet EF "EXPECT_FALSE" b
+EXPECT_FALSE(${1});
+endsnippet
+
+snippet EE "EXPECT_EQ" b
+EXPECT_EQ(${1}, ${2});
+endsnippet
+
+snippet ED "EXPECT_DEATH" b
+EXPECT_DEATH(${1}, "${2}");
+endsnippet
+
+snippet Ds "DEFINE_string(...)" b
+DEFINE_string(${1}, "${2}", "${3}");
+endsnippet
+
+snippet Di32 "DEFINE_int32(...)" b
+DEFINE_int32(${1}, ${2}, "${3}");
+endsnippet
