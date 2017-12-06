@@ -23,12 +23,16 @@ LOG(FATAL) << ${VISUAL}${1};
 endsnippet
 
 snippet LIE "LOG_IF(ERROR, ...) << "
-LOG_IF(ERROR, ${1}) << ${VISUAL};
+LOG_IF(ERROR, ${1}) << ${VISUAL}${2};
+endsnippet
+
+snippet VL "VLOG(1) << " b
+VLOG(${1:0}) << ${VISUAL}${2};
 endsnippet
 
 snippet TF "TEST_F(..., ...) { ... }" b
 TEST_F(${1}, ${2}) {
-	${0}
+	${3}
 }
 endsnippet
 
@@ -66,4 +70,9 @@ endsnippet
 
 snippet Di32 "DEFINE_int32(...)" b
 DEFINE_int32(${1}, ${2}, "${3}");
+endsnippet
+
+snippet init "google init" b
+google::ParseCommandLineFlags(&argc, &argv, true);
+google::InitGoogleLogging(argv[0]);
 endsnippet

@@ -45,16 +45,32 @@ snippet ct "std::cout << ... << std::endl;"
 std::cout << ${0} << std::endl;
 endsnippet
 
-snippet svec "std::vector" i
+snippet vec "std::vector" i
 std::vector<${1}>
 endsnippet
 
-snippet sstr "std::string" i
+snippet str "std::string" i
 std::string
 endsnippet
 
-snippet fora "for (auto iter = ...)" b
-for (auto ${1:iter} = ${2}begin(); $1 != $2end(); ++$1) {
-	${0}
+snippet forr "for (auto iter : ...) {...}"
+for (${1:auto} ${2:iter} : ${3}) {
+	${VISUAL}${0}
 }
+endsnippet
+
+snippet forc "for (const auto& iter : ...) {...}"
+for (const auto& ${1:iter} : ${2}) {
+	${VISUAL}${0}
+}
+endsnippet
+
+snippet forb "for (auto iter = XX.begin(); iter < XX.end(); ++iter) {...}"
+for (${1:auto} ${2:iter} = ${3}.begin(); $2 < $3.end(); ++$2) {
+	${VISUAL}${0}
+}
+endsnippet
+
+snippet uptr "std::unique_ptr<...>" i
+std::unique_ptr<${1}>
 endsnippet
