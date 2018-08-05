@@ -6,12 +6,16 @@ snippet utf8 "# -*- coding: utf-8 -*-"
 # -*- coding: utf-8 -*-
 endsnippet
 
-snippet i "import"
+snippet i "import" b
 import 
 endsnippet
 
-snippet fro "from ... import ..."
+snippet fr "from ... import ..." b
 from ${1} import ${2:*}
+endsnippet
+
+snippet flags "from absl import flags" b
+from absl import flags
 endsnippet
 
 snippet if "if ...:"
@@ -140,10 +144,45 @@ ${1:parser}.add_argument(
 )
 endsnippet
 
-snippet main "def main(): ... if __name__ == '__main__': ..." b
-def main():
+snippet main "def _main(): ... if __name__ == '__main__': ..." b
+import logging
+
+def _main() -> bool:
 	${VISUAL}${0}
 
 if __name__ == '__main__':
-	main()
+	try:
+		sys.exit(0 if _main() else 1)
+	except:
+		logging.exception('Failed with exception')
+		raise
+endsnippet
+
+snippet init "init flags & logging" b
+flags.mark_flags_as_required([])
+
+try:
+	flags.FLAGS(sys.argv)
+except flags.Error as error:
+	print('Failed to parse gflags: {}'.format(error), file=sys.stderr)
+	return False
+
+logging.basicConfig(
+	format='%(levelname)s %(asctime)s %(thread)d %(filename)s:%(lineno)d] %(message)s',
+	datefmt='%m%d %H:%M:%S %Z',
+	filename=flags.FLAGS.log_file,
+	level=logging.DEBUG)
+return True
+endsnippet
+
+snippet Ds "flags.DEFINE_string(...)" b
+flags.DEFINE_string('${1}', ${2:None}, '${3}')
+endsnippet
+
+snippet Db "flags.DEFINE_bool(...)" b
+flags.DEFINE_bool('${1}', ${2:True}, '${3}')
+endsnippet
+
+snippet F "flags.FLAGS." i
+flags.FLAGS.
 endsnippet
