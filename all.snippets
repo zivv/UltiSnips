@@ -2,49 +2,49 @@ snippet email "zivvv0@gmail.com (ziv)" i
 zivvv0@gmail.com (ziv)
 endsnippet
 
-snippet todo "TODO(ziv): "
+snippet todo "TODO(ziv): " A
 TODO(ziv): ${VISUAL}
 endsnippet
 
-snippet todoo "TODO(ziye): "
-TODO(ziye): ${VISUAL}${0}
+snippet todz "TODO(ziye): " A
+TODO(ziye): ${VISUAL}
 endsnippet
 
-snippet todoy "TODO(yezi):"
-TODO(yezi): ${VISUAL}${0}
+snippet tody "TODO(yezi):" A
+TODO(yezi): ${VISUAL}
 endsnippet
 
-snippet note "NOTE(ziv):"
+snippet note "NOTE(ziv):" A
 NOTE(ziv): ${VISUAL}
 endsnippet
 
-snippet notey "NOTE(yezi):"
+snippet noty "NOTE(yezi):" A
 NOTE(yezi): ${VISUAL}
 endsnippet
 
-snippet xxx "XXX(ziv):"
+snippet xxx "XXX(ziv):" A
 XXX(ziv): ${VISUAL}
 endsnippet
 
-snippet xxxy "XXX(yezi):"
+snippet xxy "XXX(yezi):" A
 XXX(yezi): ${VISUAL}
 endsnippet
 
 snippet ![\(\['"<]! "symbol pair" ir
-`!p snip.rv = match.group(0)`${VISUAL}${0}`!p snip.rv = {
-		  '[':']',
-			'(':')',
-			"'":"'",
-			'"':'"',
-			'<':'>',
-		}.get(match.group(0))`
+`!p snip.rv = match.group(0)`${1:${VISUAL}}`!p snip.rv = {
+	'[':']',
+	'(':')',
+	"'":"'",
+	'"':'"',
+	'<':'>',
+}.get(match.group(0))`${0}
 endsnippet
 
 snippet {} "symbol pair" i
-{${VISUAL}${1}}${0}
+{${1:${VISUAL}}}${0}
 endsnippet
 
-snippet { "expand {}" i
+snippet "{ " "expand {}" i
 {
 	${VISUAL}${0}
 }
