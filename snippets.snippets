@@ -1,15 +1,25 @@
-snippet $ "${...}" i
-${${VISUAL}${0}}
+snippet snipp "snippet ... endsnippet" bA
+`!p snip.rv = "snippet"` ${1:Trigger} "${2:Description}"${3}
+${0:$2}
+`!p snip.rv = "endsnippet"`
 endsnippet
 
-snippet v "${VISUAL}" i
+snippet $ "${...}" iA
+${${1:${VISUAL}}}
+endsnippet
+
+snippet vv "${VISUAL}" iA
 `!p snip.rv = '${VISUAL}'`
 endsnippet
 
-snippet v0 "${VISUAL}${0}" i
-`!p snip.rv = '${VISUAL}${0}'`
+snippet v0 "${0:${VISUAL}}" iA
+`!p snip.rv = '${0:${VISUAL}}'`
 endsnippet
 
-snippet !p "python script" i
+snippet !p "python script" iA
 `!p snip.rv = '\`!p snip.rv = '`${VISUAL}${0}`!p snip.rv = '\`'`
+endsnippet
+
+snippet space "${number/(.+)/ /}" i
+${${1:number}/(.+)/ /}
 endsnippet

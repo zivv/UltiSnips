@@ -47,7 +47,7 @@ protected
 endsnippet
 
 snippet ret "return"
-return ${0:0};
+return${1/(.+)/ /}${1:0};
 endsnippet
 
 snippet br "break"
@@ -76,26 +76,14 @@ for (${1}; ${2}; ${3}) {
 }
 endsnippet
 
-snippet forr "for (auto iter : ...) {...}"
-for (${1:auto} ${2:iter} : ${3}) {
-	${VISUAL}${0}
-}
-endsnippet
-
-snippet forb "for (auto iter = XX.begin(); iter < XX.end(); ++iter) {...}"
-for (${1:auto} ${2:iter} = ${3}.begin(); $2 < $3.end(); ++$2) {
-	${VISUAL}${0}
-}
-endsnippet
-
 snippet for+ "for (int i = 0; i < n; ++i) {...}"
 for (${1:int} ${2:i} = ${3:0}; $2 < ${4:n}; ++$2) {
 	${VISUAL}${0}
 }
 endsnippet
 
-snippet for- "for (int i = n-1; i >= 0; --i) {...}"
-for (${1:int} ${2:i} = ${3:n-1}; $2 >= ${4:0}; --$2) {
+snippet for- "for (int i = n - 1; i >= 0; --i) {...}"
+for (${1:int} ${2:i} = ${3:n - 1}; $2 >= ${4:0}; --$2) {
 	${VISUAL}${0}
 }
 endsnippet

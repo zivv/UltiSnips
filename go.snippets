@@ -1,0 +1,29 @@
+snippet fpt "fmt.Print(...)" bA
+fmt.Print(${1:${VISUAL}})${0}
+endsnippet
+
+snippet fpl "fmt.Println(...)" bA
+fmt.Println(${1:${VISUAL}})${0}
+endsnippet
+
+snippet fpf "fmt.Printf(...)" bA
+fmt.Printf("${1}", ${2})${0}
+endsnippet
+
+snippet jk ":=" wA
+:=
+endsnippet
+
+snippet kj "=" wA
+=
+endsnippet
+
+snippet kl "<-" wA
+<-
+endsnippet
+
+snippet ife "if err := ...; err != nil {...}" bA
+if err := ${1}; err != nil {
+	${2}
+}
+endsnippet
