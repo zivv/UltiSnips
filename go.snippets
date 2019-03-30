@@ -1,24 +1,31 @@
-snippet fpt "fmt.Print(...)" bA
-fmt.Print(${1:${VISUAL}})${0}
-endsnippet
+# Check following file if vim-go has been installed:
+#   $HOME/.vim/bundle/vim-go/gosnippets/UltiSnips/go.snippets
 
-snippet fpl "fmt.Println(...)" bA
+snippet fn "fmt.Println(...)" wA
 fmt.Println(${1:${VISUAL}})${0}
 endsnippet
 
-snippet fpf "fmt.Printf(...)" bA
+snippet ff "fmt.Printf(...)" wA
 fmt.Printf("${1}", ${2})${0}
 endsnippet
 
-snippet jk ":=" wA
+snippet fe "fmt.Errorf(...)" wA
+fmt.Errorf("${1}", ${2})${0}
+endsnippet
+
+snippet fs "fmt.Sprintf(...)" wA
+fmt.Sprintf("${1}", ${2})${0}
+endsnippet
+
+snippet jk ":=" iA
 :=
 endsnippet
 
-snippet kj "=" wA
+snippet kj "=" iA
 =
 endsnippet
 
-snippet kl "<-" wA
+snippet kl "<-" iA
 <-
 endsnippet
 
