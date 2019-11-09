@@ -6,6 +6,22 @@ snippet u64 "uint64" i
 uint64 
 endsnippet
 
+snippet vec "std::vector" i
+std::vector<${1}>
+endsnippet
+
+snippet str "std::string" i
+std::string
+endsnippet
+
+snippet up "std::unique_ptr<...>" i
+std::unique_ptr<${VISUAL}${1}>
+endsnippet
+
+snippet sc "static_cast<...>(${VISUAL})" i
+static_cast<${1:int}>(${VISUAL}${2})
+endsnippet
+
 snippet main "int main(int argc, char** argv) {...}" b
 int main(int argc, char** argv) {
 	${VISUAL}${0}
@@ -29,28 +45,20 @@ snippet fcl "fclose(...);" b
 fclose(${1:fin});
 endsnippet
 
-snippet deff "#ifndef XX | #define XX | #endif // XX" b
+snippet ifd "#ifndef XX | #define XX | #endif // XX" b
 #ifndef ${1:${VISUAL}}
 #define $1
 #endif  // $1${0}
 endsnippet
 
 snippet ns "namespace"
-namespace ${1:`!p snip.rv = snip.basename`} {
+namespace ${1:`!p snip.rv = snip.basename`}${1/(.+)/ /}{
 ${VISUAL}${0}
-}  // namespace $1
+}  // namespace${1/(.+)/ /}$1
 endsnippet
 
 snippet ct "std::cout << ... << std::endl;"
 std::cout << ${0} << std::endl;
-endsnippet
-
-snippet vec "std::vector" i
-std::vector<${1}>
-endsnippet
-
-snippet str "std::string" i
-std::string
 endsnippet
 
 snippet forr "for (auto iter : ...) {...}"
@@ -71,14 +79,29 @@ for (${1:auto} ${2:iter} = ${3}.begin(); $2 < $3.end(); ++$2) {
 }
 endsnippet
 
-snippet up "std::unique_ptr<...>" i
-std::unique_ptr<${VISUAL}${1}>
-endsnippet
-
-snippet sc "static_cast<...>(${VISUAL})" i
-static_cast<${1:int}>(${VISUAL})
+snippet mv "std::move(...)" i
+std::move(${VISUAL}${1})
 endsnippet
 
 snippet inf "std::numeric_limits<double>::infinity()" i
-std::numeric_limits<double>::infinity()
+std::numeric_limits<${1:double}>::infinity()
+endsnippet
+
+snippet eps "std::numeric_limits<T>::epsilon()" i
+std::numeric_limits<${1:double}>::epsilon()
+endsnippet
+
+##### random
+
+snippet inr "#include <random>" b
+#include <random>
+endsnippet
+
+# Pseudo-random number generator.
+snippet prng "std::mt19937 prng = std::mt19937(Year)" b
+std::mt19937 ${1:prng} = std::mt19937(${2:`date +%Y`})
+endsnippet
+
+snippet urd "std::uniform_real_distribution<T>" i
+std::uniform_real_distribution<${1:double}>
 endsnippet

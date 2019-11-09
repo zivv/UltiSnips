@@ -1,16 +1,12 @@
-snippet i "int" i
-int 
-endsnippet
-
 snippet lo "long" i
 long 
 endsnippet
 
-snippet u "unsigned" i
+snippet us "unsigned" i
 unsigned 
 endsnippet
 
-snippet d "double" i
+snippet db "double" i
 double 
 endsnippet
 
@@ -26,7 +22,7 @@ snippet st "static"
 static 
 endsnippet
 
-snippet v "void" i
+snippet vo "void" i
 void 
 endsnippet
 
@@ -124,6 +120,14 @@ snippet in "#include <...>" b
 #include <${0}>
 endsnippet
 
-snippet In "#include ''...''" b
+snippet ic "#include ''...''" b
 #include "${0}"
+endsnippet
+
+snippet inh "#include 'header.h'" b
+`!p snip.rv = f'#include "{path.replace("_test", "").replace(".cc", ".h")}"'`
+endsnippet
+
+snippet jk "->" iA
+->
 endsnippet

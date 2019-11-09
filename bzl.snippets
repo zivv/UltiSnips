@@ -1,0 +1,25 @@
+snippet lib "cc_library" b
+cc_library(
+	name = "${1}",
+	srcs = ["$1.cc"],
+	hdrs = ["$1.h"],
+	deps = [
+		$0
+	],
+)
+endsnippet
+
+snippet tt "cc_test" b
+cc_test(
+	name = "${1}_test",
+	srcs = ["$1_test.cc"],
+	deps = [
+		":$1",
+		"@gtest//:gtest_main",
+	],
+)
+endsnippet
+
+snippet al "alwayslink = True,"
+alwayslink = True,
+endsnippet

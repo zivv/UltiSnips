@@ -1,33 +1,102 @@
-snippet CK "CHECK(...)"
+snippet init "google init" b
+google::ParseCommandLineFlags(&argc, &argv, true);
+google::InitGoogleLogging(argv[0]);
+endsnippet
+
+##### /usr/include/gflags/gflags.h
+
+snippet igf "#include 'gflags/gflags.h'" b
+#include "gflags/gflags.h"
+endsnippet
+
+snippet Ds "DEFINE_string(...)" b
+DEFINE_string(${1}, "${2}", "${3}");
+endsnippet
+
+snippet Db "DEFINE_bool(...)" b
+DEFINE_bool(${1}, ${2:true}, "${3}");
+endsnippet
+
+snippet Di "DEFINE_int32(...)" b
+DEFINE_int32(${1}, ${2:0}, "${3}");
+endsnippet
+
+##### /usr/include/glog/logging.h
+
+snippet igl "#include 'glog/logging.h'" b
+#include "glog/logging.h"
+endsnippet
+
+snippet CK "CHECK(...)" b
 CHECK(${1});
 endsnippet
 
-snippet CE "CHECK_EQ(...)"
+snippet CKE "CHECK_EQ(...)" b
 CHECK_EQ(${1}, ${2});
 endsnippet
 
-snippet LI "LOG(INFO) << "
+snippet CKN "CHECK_NE(...)" b
+CHECK_NE(${1}, ${2});
+endsnippet
+
+snippet CKLE "CHECK_LE(...)" b
+CHECK_LE(${1}, ${2});
+endsnippet
+
+snippet CKLT "CHECK_LT(...)" b
+CHECK_LT(${1}, ${2});
+endsnippet
+
+snippet CKGE "CHECK_GE(...)" b
+CHECK_GE(${1}, ${2});
+endsnippet
+
+snippet CKGT "CHECK_GT(...)" b
+CHECK_GT(${1}, ${2});
+endsnippet
+
+snippet CKNN "CHECK_NOTNULL(...)" b
+CHECK_NOTNULL(${1:ptr});
+endsnippet
+
+snippet LI "LOG(INFO) << " b
 LOG(INFO) << ${VISUAL}${1};
 endsnippet
 
-snippet LW "LOG(WARNING) << "
+snippet LW "LOG(WARNING) << " b
 LOG(WARNING) << ${VISUAL}${1};
 endsnippet
 
-snippet LE "LOG(ERROR) << "
+snippet LE "LOG(ERROR) << " b
 LOG(ERROR) << ${VISUAL}${1};
 endsnippet
 
-snippet LF "LOG(FATAL) << "
+snippet LF "LOG(FATAL) << " b
 LOG(FATAL) << ${VISUAL}${1};
 endsnippet
 
-snippet LIE "LOG_IF(ERROR, ...) << "
+snippet LEI "LOG_IF(ERROR, ...) << " b
 LOG_IF(ERROR, ${1}) << ${VISUAL}${2};
 endsnippet
 
-snippet VL "VLOG(1) << " b
+snippet LIN "LOG_EVERY_N(INFO, ...) << " b
+LOG_EVERY_N(INFO, ${1:10}) << ${VISUAL}${2};
+endsnippet
+
+snippet VL "VLOG(...) << " b
 VLOG(${1:0}) << ${VISUAL}${2};
+endsnippet
+
+##### /usr/include/gtest/gtest.h
+
+snippet igt "#include 'gtest/gtest.h'" b
+#include "gtest/gtest.h"
+endsnippet
+
+snippet TT "TEST(..., ...) { ... }" b
+TEST(${1}, ${2}) {
+	${3}
+}
 endsnippet
 
 snippet TF "TEST_F(..., ...) { ... }" b
@@ -62,26 +131,4 @@ endsnippet
 
 snippet ED "EXPECT_DEATH" b
 EXPECT_DEATH(${1}, "${2}");
-endsnippet
-
-snippet Ds "DEFINE_string(...)" b
-DEFINE_string(${1}, "${2}", "${3}");
-endsnippet
-
-snippet Db "DEFINE_bool(...)" b
-DEFINE_bool(${1}, ${2:true}, "${3}");
-endsnippet
-
-snippet Di "DEFINE_int32(...)" b
-DEFINE_int32(${1}, ${2:0}, "${3}");
-endsnippet
-
-snippet init "google init" b
-google::ParseCommandLineFlags(&argc, &argv, true);
-google::InitGoogleLogging(argv[0]);
-endsnippet
-
-snippet init "google init" b
-google::ParseCommandLineFlags(&argc, &argv, true);
-google::InitGoogleLogging(argv[0]);
 endsnippet

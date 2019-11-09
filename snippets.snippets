@@ -1,10 +1,10 @@
 snippet snipp "snippet ... endsnippet" bA
 `!p snip.rv = "snippet"` ${1:Trigger} "${2:Description}"${3}
-${0:$2}
+${4:$2}${0}
 `!p snip.rv = "endsnippet"`
 endsnippet
 
-snippet $ "${...}" iA
+snippet $ "${...}" i
 ${${1:${VISUAL}}}
 endsnippet
 
