@@ -1,0 +1,40 @@
+# Check following file:
+#   $HOME/.vim/bundle/vim-snippets/UltiSnips/javascript.snippets
+#   $HOME/.vim/bundle/vim-snippets/snippets/javascript/javascript.snippets
+#   $HOME/.vim/bundle/vim-snippets/snippets/javascript/javascript-react.snippets
+
+snippet jk "=>" iA
+=>
+endsnippet
+
+snippet ex "export" b
+export 
+endsnippet
+
+snippet exd "export default" b
+export default 
+endsnippet
+
+# https://github.com/airbnb/javascript#iterators--nope
+# snippet foro "for (const ... of Object.keys(...))" b
+# for (const ${1} of Object.${2:keys}(${3})) {
+#         ${0}
+# }
+# endsnippet
+
+snippet tb "this.xxx = this.xxx.bind(this);" b
+this.${1} = this.$1.bind(this);
+endsnippet
+
+
+# Emotion - https://emotion.sh/docs/object-styles
+
+snippet divcss "<div css={{ ... }}> ... </div>" bA
+<div
+	css={{
+		${1}
+	}}
+>
+	${2}
+</div>
+endsnippet
