@@ -1,0 +1,10 @@
+# Clang Thread Safety Analysis
+# https://clang.llvm.org/docs/ThreadSafetyAnalysis.html
+
+snippet GB "GUARDED_BY(x)"
+GUARDED_BY(${VISUAL}${1})
+endsnippet
+
+snippet RQ "REQUIRES(...)"
+REQUIRES(${VISUAL}${1})
+endsnippet

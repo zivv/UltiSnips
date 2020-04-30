@@ -1,3 +1,10 @@
+# Check following file:
+#   $HOME/.vim/bundle/vim-snippets/UltiSnips/c.snippets
+#   $HOME/.vim/bundle/vim-snippets/UltiSnips/cpp.snippets
+#   ./c.snippets
+#   ./cpp_google.snippets
+#   ./cpp_clang.snippets
+
 snippet si "size_t" i
 size_t 
 endsnippet
@@ -16,6 +23,18 @@ endsnippet
 
 snippet up "std::unique_ptr<...>" i
 std::unique_ptr<${VISUAL}${1}>
+endsnippet
+
+snippet mu "std::make_unique<...>" i
+std::make_unique<${VISUAL}${1}>
+endsnippet
+
+snippet sp "std::shared_ptr<...>" i
+std::shared_ptr<${VISUAL}${1}>
+endsnippet
+
+snippet ms "std::make_shared<...>" i
+std::make_shared<${VISUAL}${1}>
 endsnippet
 
 snippet sc "static_cast<...>(${VISUAL})" i

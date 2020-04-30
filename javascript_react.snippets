@@ -1,0 +1,55 @@
+# React - https://reactjs.org/
+
+# Check following file:
+#   $HOME/.vim/bundle/vim-snippets/snippets/javascript/javascript-react.snippets
+#   $HOME/.vim/bundle/vim-snippets/snippets/html.snippets
+#   ./html.snippets
+
+snippet edc "export default class extends Component {...}" bA
+export default class extends Component {
+	render() {
+		return (
+			${1:<div />}
+		);
+	}
+}
+endsnippet
+
+snippet constructor "constructor(props) {...}" bA
+constructor(props) {
+	super(props);
+	this.state = {
+		${1}
+	};
+}
+endsnippet
+
+snippet tb "this.xxx = this.xxx.bind(this);" b
+this.${1} = this.$1.bind(this);
+endsnippet
+
+snippet cdm "componentDidMount() {...}" b
+componentDidMount() {
+	${1}
+}
+endsnippet
+
+snippet prp "this.props." i
+this.props.
+endsnippet
+
+snippet ste "this.state." i
+this.state.
+endsnippet
+
+snippet sst "this.setState({...})" b
+this.setState({
+	${1}: ${2}
+});
+endsnippet
+
+snippet sss "this.setState(state => ({...}))" b
+this.setState(state => ({
+	${1}: ${2}
+}));
+endsnippet
