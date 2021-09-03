@@ -1,27 +1,27 @@
 # Check following file if vim-go has been installed:
 #   $HOME/.vim/bundle/vim-go/gosnippets/UltiSnips/go.snippets
 
-snippet fn "fmt.Println(...)" wA
+snippet fn "fmt.Println(...)" w
 fmt.Println(${1:${VISUAL}})
 endsnippet
 
-snippet ff "fmt.Printf(...)" wA
+snippet ff "fmt.Printf(...)" w
 fmt.Printf("${1}", ${2})
 endsnippet
 
-snippet fe "fmt.Errorf(...)" wA
+snippet fe "fmt.Errorf(...)" w
 fmt.Errorf("${1}", ${2})
 endsnippet
 
-snippet fs "fmt.Sprintf(...)" wA
+snippet fs "fmt.Sprintf(...)" w
 fmt.Sprintf("${1}", ${2})
 endsnippet
 
-snippet lp "log.Printf(...)" wA
+snippet lp "log.Printf(...)" w
 log.Printf("${1}"${2})
 endsnippet
 
-snippet lf "log.Println(...)" wA
+snippet lf "log.Println(...)" w
 log.Fatalf("${1}", ${2})
 endsnippet
 
@@ -43,6 +43,12 @@ if err := ${1}; err != nil {
 }
 endsnippet
 
-snippet ap "a = append(a, b)" bA
-${1} = append($1, ${2}}
+snippet ifn "if err != nil {...}" bA
+if err != nil {
+	${1}
+}
+endsnippet
+
+snippet ap "a = append(a, b)" b
+${1} = append($1, ${2})
 endsnippet
